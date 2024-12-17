@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  input, textarea, select {
+    @apply border-gray-300 rounded-lg shadow-sm transition-all duration-200;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    @apply ring-2 ring-blue-500 border-blue-500;
+  }
+
+  .task-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  .task-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .task-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .task-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
+}
